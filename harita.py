@@ -1,5 +1,8 @@
 # harita.py
 
+# Gerçek broker haritası burada bilerek yeniden oluşturulmaz; yalnızca yetkili bir kaynaktan geri yüklenmelidir.
+PHILLIP_WEBHOOK_HARITASI = {}
+
 
 # --- 1. RADARDAKİ ORDUMUZUN SEKTÖREL HARİTASI ---
 SEKTOR_HARITASI = {

@@ -99,7 +99,14 @@ async def en_guclu_sinyali_sec_ve_infaz_et():
     en_guclu_sinyal = max(sinyal_havuzu, key=lambda s: (s.q_score, -s.spread_pct))
     print(f"🏆 [KAZANAN BİRLİK] {en_guclu_sinyal.symbol} İnfaza Gönderiliyor.")
 
-    arka_plan_telsiz_yonetimi(en_guclu_sinyal)
+    protokol_sonucu = arka_plan_telsiz_yonetimi(en_guclu_sinyal)
+
+    if not protokol_sonucu or protokol_sonucu.get("karar") != "ONAY":
+        gerekce = protokol_sonucu.get("gerekce", "Protokol sonucu alınamadı.") if protokol_sonucu else "Protokol sonucu alınamadı."
+        print(f"🛑 [SANAL İŞLEM İPTAL] {en_guclu_sinyal.symbol} pozisyonu açılmadı: {gerekce}")
+        sinyal_havuzu.clear()
+        kabul_odasi_acik = False
+        return
 
     giris_fiyati = float(en_guclu_sinyal.price)
     alinacak_lot = dinamik_lot_hesapla(en_guclu_sinyal, sanal_kasa_bakiyesi)

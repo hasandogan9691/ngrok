@@ -21,8 +21,8 @@ def phillip_capital_emir_gonder(veri):
 
     try:
         # requests.post(webhook_url, json=emir_paketi, headers={"Content-Type": "application/json"})
-        print(f"🚀 [EMİR İNFAZ] {veri.symbol} ({veri.buyOrCell}) {veri.quantity} Lot -> {veri.price} ₺ iletildi.")
-        return True
+        print(f"🧪 [SİMÜLASYON] Broker iletimi devre dışı; {veri.symbol} ({veri.buyOrCell}) emri gönderilmedi.")
+        return False
     except Exception as e:
         print(f"❌ [EMİR HATASI] Broker bağlantı hatası: {str(e)}")
         return False
