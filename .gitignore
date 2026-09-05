@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# AI / büyük model ağırlıkları
+AYZERS_v1/
+AYZERS_v1_LORA/
+AYZERS_v1_gguf/
+outputs/
+*.safetensors
+*.gguf
+
+# Cache
+.cache/
+unsloth_compiled_cache/
+
+# Sistem / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+/%USERPROFILE%\\.wslconfig

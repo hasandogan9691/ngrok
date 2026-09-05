@@ -1,0 +1,1 @@
+FROM "C:\Users\Hasan Do§an\sohbet\AYZERS_v1_gguf\llama-3-8b-instruct.Q4_K_M.gguf" 
