@@ -1,9 +1,13 @@
 import csv
 import json
 import re
+from pathlib import Path
 
 # AYZERS'in ruhunu (91 Maddelik Doktrin) içeri aktarıyoruz.
-from doktrin import SISTEM_KURALLARI
+SISTEM_KURALLARI = (
+    Path(__file__).resolve().with_name("egitim_doktrini.txt")
+    .read_text(encoding="utf-8")
+)
 
 CSV_DOSYASI = "hasat.csv"
 JSONL_DOSYASI = "egitim_verisi.jsonl"
